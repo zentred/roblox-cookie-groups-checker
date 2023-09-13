@@ -34,14 +34,8 @@ class Bot:
                         checked += 1
                         ctypes.windll.kernel32.SetConsoleTitleW(f'{checked}/{len(groups)}')
 
-                    # -------------------- this section saves groups as single line without indent, alot easier to read
-                    group_list = []
-                    for group in self.data[userid]['groups']:
-                        group_list.append(str(self.data[userid]['groups'][group]))
-                    self.data[userid]['groups'] = group_list
                     with open('log.json', 'w') as file:
                         json.dump(self.data, file, indent=4)
-                    # -------------------- delete this section if you want to save the file as a proper dict
 
     def owned_groups(self, userid):
         return [
