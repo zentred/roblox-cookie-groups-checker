@@ -2,9 +2,6 @@ import requests, json, time, ctypes, random
 from threading import Thread
 from rich import print
 
-proxies = open('proxies.txt').read().splitlines()
-all_cookies = open('files/cookies.txt').read().splitlines()
-
 class Bot:
     def __init__(self):
         self.cookies = open('cookies.txt').read().splitlines()
